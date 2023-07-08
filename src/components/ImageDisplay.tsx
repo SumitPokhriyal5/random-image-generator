@@ -7,7 +7,7 @@ const getRandomImage = () => {
 };
 
 interface ImageDisplayProps {
-  onRefresh: () => void;
+  onRefresh: (imageUrl: string) => void;
 }
 
 class ImageDisplay extends React.Component<ImageDisplayProps> {
@@ -28,7 +28,8 @@ class ImageDisplay extends React.Component<ImageDisplayProps> {
     // Update the state with the new imageUrl
     this.setState({ imageUrl });
     // Call the onRefresh function provided as a prop to notify the parent component
-    this.props.onRefresh();
+    this.props.onRefresh(imageUrl);
+
   };
 
   render() {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share';
 
 interface ShareButtonsProps {
@@ -6,6 +6,7 @@ interface ShareButtonsProps {
 }
 
 const ShareButtons: React.FC<ShareButtonsProps> = ({ url }) => {
+  
   return (
     <div className="flex justify-center mt-6">
       {/* Facebook share button */}

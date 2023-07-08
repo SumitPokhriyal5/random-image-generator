@@ -2,7 +2,7 @@ import React from 'react';
 import ImageDisplay from './ImageDisplay';
 
 interface RandomImageProps {
-  onRefresh: () => void;
+  onRefresh: (imageUrl: string) => void;
 }
 
 const RandomImage: React.FC<RandomImageProps> = ({ onRefresh }) => {

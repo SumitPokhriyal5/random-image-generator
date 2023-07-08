@@ -3,13 +3,11 @@ import RandomImage from './components/RandomImage';
 import ShareButtons from './components/ShareButtons';
 
 const App: React.FC = () => {
-  // State variable to track the refresh count
-  const [refreshCount, setRefreshCount] = useState(0);
+  const [imgUrl, setImgUrl] = useState("")
 
   // Function to handle image refresh
-  const handleRefreshImage = () => {
-    // Increment the refresh count by 1
-    setRefreshCount((prevCount) => prevCount + 1);
+  const handleRefreshImage = (imageUrl: string) => {
+    setImgUrl(imageUrl)
   };
 
   return (
@@ -18,7 +16,7 @@ const App: React.FC = () => {
       <RandomImage onRefresh={handleRefreshImage} />
 
       {/* ShareButtons component */}
-      <ShareButtons url={window.location.href} />
+      <ShareButtons url={imgUrl} />
     </div>
   );
 };
